@@ -1,0 +1,10 @@
+.oprations{
+    margin-top: 8px;
+    margin-bottom: 8px;
+}
+.oprations button{
+    margin-left: 8px;
+}
+.messagesuccess,.messageerror{
+    display: none;
+}

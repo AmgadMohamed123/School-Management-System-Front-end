@@ -1,0 +1,260 @@
+<!--Start Container-->
+<div class="container align">
+    <h3 class="text-center">{{'student.add.student'|translate}}</h3>
+  <hr/>
+    <!--Start Form-->
+    <form [formGroup]="formData"  >
+      <!--Start Row-->
+    <div class="row">
+    
+        
+ 
+        <div class="col-sm-6">
+      
+        <!--Start Student Fullname group-->
+  
+        <div class="form-group">
+          <label  class="control-label">{{'student.name'|translate}}</label>
+
+          <div >
+              <input type="text" formControlName="name"  [(ngModel)]="student.name"  class="form-control" autofocus>
+          </div>
+          <div *ngIf="controls.name.touched &&controls.name.errors?.required"   class="alert alert-danger  margin" style="text-align: start;">{{'shared.requiredName'|translate}}</div>
+  
+      </div>
+            <!--End Student Fullname group-->
+  
+  
+  
+  
+            <!--Start Student Age group-->
+  
+      <div class="form-group">
+        <label  class="control-label">{{'shared.age'|translate}}</label>
+
+          <div>
+              <input type="number" formControlName="age"  [(ngModel)]="student.age"  class="form-control">
+          </div>
+          <div *ngIf="controls.age.touched &&controls.age.errors?.required"   class="alert alert-danger  margin" style="text-align: start;">{{'shared.requiredAge'|translate}}</div>
+  
+      </div>
+  
+                <!--End Student Age group-->
+  
+           
+  
+              <!--Start Student Date of Birth group-->
+  
+  
+      <div class="form-group " style="text-align: start;">
+          <label  class=" control-label ">{{'shared.birthDate'|translate}}</label>
+          <div >
+  
+            <!-- <input class="form-control" type="date" value="2011-08-19" id="example-date-input" formControlName="dob"  [(ngModel)]="student.dob"   > -->
+            <input class="form-control" type="date" #myDate [value]="student.dob | date:'yyyy-MM-dd'" (input)="student.dob=parseDate($event.target.value)" />
+
+          </div>
+          <!-- <div *ngIf="controls.dob.touched &&controls.dob.errors?.required"   class="alert alert-danger col-sm-5 margin">{{'shared.birthDateRequired'|translate}}</div> -->
+  
+      </div>
+  
+              <!--End Student Date of Birth group-->
+  
+  
+                          <!--Start Student joinDate-->
+  
+  
+      <div class="form-group" style="text-align: start;">
+        <label  class="control-label">{{'student.joinDate'|translate}}</label>
+        <div >
+            <!-- <input type="date" formControlName="joinDate"  [(ngModel)]="student.joinDate"      class="form-control"> -->
+            <input class="form-control" type="date" #myDate [value]="student.joinDate| date:'yyyy-MM-dd'" (input)="student.joinDate=parseDate($event.target.value)" />
+
+          </div>
+  
+        <!-- <div *ngIf="controls.joinDate.touched &&controls.joinDate.errors?.required"   class="alert alert-danger col-sm-6 margin">{{'student.requiredjoinDate'|translate}}</div> -->
+  
+    </div>
+  
+  
+                            <!--End Student joinDate-->
+  
+
+
+
+
+
+
+  
+                            <!--Start Student Gender-->
+                            <div class="outline  gender-outline" (change)="handleGenderChange($event)" style="text-align: start;">
+                              <label>{{'shared.gender'|translate}}:</label>
+                              &nbsp;&nbsp;&nbsp;&nbsp;
+                              <div class="custom-control  custom-radio custom-control-inline">
+                                <input type="radio" value="male" class="custom-control-input"  id="student-male" formControlName="gender" >
+                                <label class="custom-control-label" for="student-male">{{'shared.male'|translate}}</label>
+                              </div>
+                              <div class="custom-control  custom-radio custom-control-inline">
+                                <input type="radio" value="female" class="custom-control-input"  id="student-female" formControlName="gender">
+                                <label class="custom-control-label" for="student-female">{{'shared.female'|translate}}</label>
+                              </div>
+                              </div>
+                                  <!--End Student Gender-->
+
+                                  
+
+
+
+                                    <!--Start Student Fees Payed group-->
+  
+      <div class="form-group">
+        <label  class="control-label">{{'student.paidFees'|translate}}</label>
+
+          <div>
+              <input type="number" formControlName="paidFees"  [(ngModel)]="student.paidFees"  class="form-control">
+          </div>
+          <div *ngIf="controls.paidFees.touched &&controls.paidFees.errors?.required"   class="alert alert-danger  margin" style="text-align: start;">{{'student.requiredFeesPayed'|translate}}</div>
+  
+      </div>
+  
+                                    <!--End Student Fees Payed group-->
+    
+
+
+
+                                                   <!--Start Student Fees Remained group-->
+  
+      <div class="form-group">
+        <label  class="control-label">{{'student.remainFees'|translate}}</label>
+
+          <div>
+              <input type="number" formControlName="remainFees"  [(ngModel)]="student.remainFees"  class="form-control">
+          </div>
+          <div *ngIf="controls.remainFees.touched &&controls.remainFees.errors?.required"   class="alert alert-danger  margin" style="text-align: start;">{{'student.requiredFeesRemained'|translate}}</div>
+  
+      </div>
+  
+                                    <!--End Student Fees Remained group-->
+
+
+
+ <!--Start Student Email group-->
+  
+ <div class="form-group">
+  <label  class="control-label">{{'shared.email'|translate}}</label>
+
+  <div >
+      <input type="text" formControlName="email"  [(ngModel)]="student.email"  class="form-control" autofocus>
+  </div>
+  <div *ngIf="controls.email.touched &&controls.email.errors?.required"   class="alert alert-danger  margin" style="text-align: start;">{{'shared.requiredEmail'|translate}}</div>
+  <div *ngIf="controls.email.touched &&controls.email.errors?.email"   class="alert alert-danger  margin" style="text-align: start;">{{'shared.requiredEmailFormat'|translate}}</div>
+
+</div>
+    <!--End Student Email group-->
+
+
+
+
+
+                                <!--End Student Status group-->
+
+  <div class="form-group">
+    <label  class="control-label">{{'student.status'|translate}}</label>
+
+      <div>
+          <input type="text" formControlName="status"  [(ngModel)]="student.status"  class="form-control">
+      </div>
+      <div *ngIf="controls.status.touched &&controls.status.errors?.required"   class="alert alert-danger  margin" style="text-align: start;">{{'student.requiredStatus'|translate}}</div>
+
+  </div>
+
+                                <!--End Student Status group-->
+
+
+
+
+
+            <!--End Student Address group-->
+
+            <div class="form-group">
+              <label  class="control-label">{{'student.address'|translate}}</label>
+        
+                <div>
+                    <input type="text" formControlName="address"  [(ngModel)]="student.address"  class="form-control">
+                </div>
+                <div *ngIf="controls.address.touched &&controls.address.errors?.required"   class="alert alert-danger  margin" style="text-align: start;">{{'student.requiredAddress'|translate}}</div>
+        
+            </div>
+        
+                                          <!--End Student Address group-->
+
+
+
+
+
+
+   <!--Start Level Group-->
+   <div class="outline form-group " style="text-align: start;" >
+  
+    
+    <level [data]="levelData"></level>
+    </div>
+  
+    <!--End Level Group-->
+  <!--Start Messages For Insert-->
+    <div style="display:none"  class="alert messagesuccess alert-success">{{'student.add.success'|translate}}</div>
+    <div style="display:none"  class="alert messageerror alert-danger">{{'student.add.failure'|translate}}</div>
+  <!--End Messages For Insert-->
+
+      
+    
+
+  
+  </div>
+
+
+
+
+
+
+  
+
+  <div class="col-sm-6">    
+          
+<!--Start Gurdian Group-->
+
+
+<add-guardian [data]="gurdianData"></add-guardian>
+
+<!--End Gurdian Group-->
+
+
+
+
+
+
+
+  
+
+
+
+</div>
+</div>
+
+      <!--End row-->
+      <!-- <app-add-grade></app-add-grade> -->
+
+  <hr/>
+
+  <div style="text-align: center;margin-bottom: 5px;">
+    <button  [disabled]="formData.invalid" (click)="addStudent()" class="btn btn-danger">{{'student.add.student'|translate}}</button>
+    <button  style="margin-right: 5px;margin-left: 5px;" routerLink="/list-student" class="btn btn-primary">{{'student.students'|translate}}</button>
+
+  </div>
+      
+    </form>
+   
+    <!--End form-->
+     </div>
+    
+     <!--End Container-->

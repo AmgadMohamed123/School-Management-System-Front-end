@@ -1,0 +1,74 @@
+<div class="container text-center" >
+    <form  #searchForm="ngForm"  (ngSubmit)="search(name.value)">
+        <div class="form-group align">
+            <label>{{'student.name'|translate}}</label>
+          <input type="text" ngModel #name="ngModel" name="name" class="form-control" required >
+       
+        </div>
+       
+        <div *ngIf="name.touched &&name.errors?.required"  style="width: 35%;margin: auto;margin-top: 25px;"   class="alert alert-danger col-sm-5 ">{{'shared.searchError'|translate}}</div>
+      
+    
+    
+       <div class="form-group text-center" style="margin-top: 25px;">
+    
+        <button type="submit" [disabled]="searchForm.invalid" class="btn btn-primary">{{'shared.search'|translate}}</button>
+    </div>
+
+
+<!--Start Messages For Insert-->
+<div style="display:none"  class="alert messageerror alert-danger">{{'shared.searchFailure'|translate}}</div>
+<!--End Messages For Insert-->
+
+
+      </form>
+
+        <h3 class="text-center">{{'shared.searchResult'|translate}}</h3>
+        <table class="table table-hover  table-stripped table-bordered">
+            <thead class="thead-dark">
+              <tr>
+                <th>{{'shared.id'|translate}}</th>
+                <th>{{'shared.name'|translate}}</th>
+                <th>{{'shared.age'|translate}}</th>
+                <th>{{'shared.gender'|translate}}</th>
+                <th>{{'student.hireDate'|translate}}</th>
+                
+              </tr>
+            </thead>
+            <tbody>
+              <tr class="text-center" *ngFor="let student of students " (click)="detailsStudent(student)">
+                <td>{{student.id}}</td>
+                <td>{{student.name}}</td>
+                <td>{{student.age}}</td>
+                <td>{{student.gender}}</td>
+                <td>{{student.hireDate|date}}</td>
+
+                <!-- <td><button (click)="updatestudent(student.id)"   class="btn btn-primary">{{'shared.update'|translate}}</button></td>
+                <td><button (click)="deletestudent(student.id)"  class="btn btn-danger">{{'shared.delete'|translate}}</button></td>
+                <td><button (click)="detailsstudent(student.id)" class="btn btn-warning">{{'shared.details'|translate}}</button></td>
+         -->
+              </tr>
+           
+            </tbody>
+        
+          </table>
+        
+
+          <div class="btn-group horizontal-middle">
+            <button type="button" class="btn btn-primary btn-lg" [disabled]="currentPage==0"
+                (click)="First()">{{'shared.first'|translate}}</button>
+    
+            <button type=" button" class="btn btn-primary btn-lg" [disabled]="currentPage==0"
+                (click)="Previous()">{{'shared.previous'|translate}}</button>
+    
+            <button type="button" class="btn btn-primary btn-lg" [disabled]="currentPage==totalPages -1 "
+                (click)="Next()">{{'shared.next'|translate}}</button>
+    
+            <button type="button" class="btn btn-primary btn-lg" [disabled]="currentPage==totalPages -1"
+                (click)="Last()">{{'shared.last'|translate}}</button>
+        </div>
+    
+
+
+
+          </div>

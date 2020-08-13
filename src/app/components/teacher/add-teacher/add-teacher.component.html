@@ -1,0 +1,356 @@
+<!--Start Container-->
+<div class="container start">
+    <h3 class="text-center">{{'teacher.add.title'|translate}}</h3>
+  <hr/>
+    <!--Start Form-->
+    <form  [formGroup]="formData" >
+      <!--Start Row-->
+    <div class="row">
+    
+        
+ 
+        <div class="col-sm-6">
+
+        
+        <!--Start Student Fullname group-->
+  
+        <div class="form-group">
+          <div>
+          <label  class="control-label">{{'teacher.name'|translate}}</label>
+
+          <div >
+              <input type="text" formControlName="name"  [(ngModel)]="teacher.name"  class="form-control" autofocus>
+          </div>
+          <div *ngIf="controls.name.touched &&controls.name.errors?.required"   class="alert alert-danger  margin" style="text-align: start;">{{'shared.requiredName'|translate}}</div>
+          </div>
+      
+            <!--End Student Fullname group-->
+  
+  
+  
+  
+            <!--Start Teacher Age group-->
+  <div>
+        <label  class="control-label">{{'shared.age'|translate}}</label>
+
+          <div>
+              <input type="number" formControlName="age"  [(ngModel)]="teacher.age"  class="form-control">
+          </div>
+          <div *ngIf="controls.age.touched &&controls.age.errors?.required"   class="alert alert-danger  margin" style="text-align: start;">{{'shared.requiredAge'|translate}}</div>
+  
+      
+  </div>
+                <!--End Teacher Age group-->
+  
+           
+  
+              <!--Start Teacher Date of Birth group-->
+  
+  
+      <div  style="text-align: start;">
+          <label  class=" control-label ">{{'shared.birthDate'|translate}}</label>
+          <div >
+  
+            <!-- <input class="form-control" type="date" value="2011-08-19" id="example-date-input" formControlName="birthDate" ngModel [(ngModel)]="teacher.birthDate"   > -->
+            <input class="form-control" type="date" #myDate [value]="teacher.birthDate | date:'yyyy-MM-dd'" (input)="teacher.birthDate=parseDate($event.target.value)" />
+  
+          </div>
+          <!-- <div *ngIf="controls.birthDate.touched &&controls.birthDate.errors?.required"   class="alert alert-danger col-sm-5 margin">{{'shared.birthDateRequired'|translate}}</div> -->
+  
+      </div>
+  
+              <!--End Teacher Date of Birth group-->
+  
+  
+                          <!--Start Teacher hireDate-->
+  
+  
+      <div  style="text-align: start;">
+        <label  class="control-label">{{'teacher.hireDate'|translate}}</label>
+        <div >
+            <!-- <input type="date" formControlName="hireDate"  [(ngModel)]="teacher.hireDate"      class="form-control"> -->
+            <input class="form-control" type="date" #myDate [value]="teacher.hireDate | date:'yyyy-MM-dd'" (input)="teacher.hireDate=parseDate($event.target.value)" />
+
+          </div>
+  
+        <!-- <div *ngIf="controls.hireDate.touched &&controls.hireDate.errors?.required"   class="alert alert-danger col-sm-6 margin">{{'teacher.requiredHireDate'|translate}}</div> -->
+  
+    </div>
+  
+  
+                            <!--End Teacher hireDate-->
+  
+
+
+
+
+
+<br/>
+  
+                            <!--Start Teacher Gender-->
+                            <div class="outline  gender-outline" (change)="handleGenderChange($event)" style="text-align: start;">
+                              <label>{{'shared.gender'|translate}}:</label>
+                              &nbsp;&nbsp;&nbsp;&nbsp;
+                              <div class="custom-control  custom-radio custom-control-inline">
+                                <input type="radio" value="male" class="custom-control-input"  id="male" formControlName="gender" >
+                                <label class="custom-control-label" for="male">{{'shared.male'|translate}}</label>
+                              </div>
+                              <div class="custom-control  custom-radio custom-control-inline">
+                                <input type="radio" value="female" class="custom-control-input"  id="female" formControlName="gender">
+                                <label class="custom-control-label" for="female">{{'shared.female'|translate}}</label>
+                              </div>
+                              </div>
+                          
+                                  <!--End Teacher Gender-->
+
+                                  
+
+
+
+
+
+  
+                            <!--Start Teacher Marital Status-->
+                            <div class="outline  gender-outline"(change)="handleMaritalStatusChange($event)" style="text-align: start;">
+                              <label>{{'shared.maritalStatus'|translate}}:</label>
+                              &nbsp;&nbsp;&nbsp;&nbsp;
+                              <div class="custom-control  custom-radio custom-control-inline">
+                                <input type="radio" value="single" class="custom-control-input"  id="single" formControlName="maritalStatus">
+                                <label class="custom-control-label" for="single">{{'shared.single'|translate}}</label>
+                              </div>
+                              <div class="custom-control  custom-radio custom-control-inline">
+                                <input type="radio" value="married" class="custom-control-input"  id="married" formControlName="maritalStatus">
+                                <label class="custom-control-label" for="married">{{'shared.married'|translate}}</label>
+                              </div>
+
+
+                              <div *ngIf="controls.gender.invalid && controls.gender.errors?.required"
+                              class="alert alert-danger">
+                              required
+                              <!-- {{'shared.genderMsg' | translate}} -->
+                          </div>
+                              </div>
+                          
+                                  <!--End Teacher Marital Status-->
+
+
+
+
+
+
+
+
+                                    <!--Start Teacher Salary group-->
+  <div>
+        <label  class="control-label">{{'teacher.salary'|translate}}</label>
+
+          <div>
+              <input type="number" formControlName="salary"  [(ngModel)]="teacher.salary"  class="form-control">
+          </div>
+          <div *ngIf="controls.salary.touched &&controls.salary.errors?.required"   class="alert alert-danger  margin" style="text-align: start;">{{'teacher.requiredSalary'|translate}}</div>
+  </div>
+  
+                                    <!--End Teacher Salary group-->
+    
+
+
+
+                                                   <!--Start Teacher Specailization group-->
+  <div>
+        <label  class="control-label">{{'teacher.specialization'|translate}}</label>
+
+          <div>
+              <input type="text" formControlName="specialization"  [(ngModel)]="teacher.specialization"  class="form-control">
+          </div>
+          <div *ngIf="controls.specialization.touched &&controls.specialization.errors?.required"   class="alert alert-danger  margin" style="text-align: start;">{{'teacher.requiredSpecialization'|translate}}</div>
+  </div>
+  
+                                    <!--End Teacher Specailization group-->
+                                    <!--Start Teacher Qualification group-->
+                                    <div>
+                                     <label  class="control-label">{{'teacher.qualification'|translate}}</label>
+                             
+                                       <div>
+                                           <input type="text" formControlName="qualification"  [(ngModel)]="teacher.qualification"  class="form-control">
+                                       </div>
+                                       <div *ngIf="controls.qualification.touched &&controls.qualification.errors?.required"   class="alert alert-danger  margin" style="text-align: start;">{{'teacher.qualification'|translate}}</div>
+                               
+                                      </div>
+                                                                                    <!--End Teacher Qualification group-->
+
+
+
+
+
+  
+   
+  
+  
+  </div>
+
+</div>
+
+
+
+  <div class="col-sm-6">
+
+
+
+       <!--Start Teacher Email group-->
+  <div >
+    <label  class="control-label">{{'shared.email'|translate}}</label>
+
+    <div >
+        <input type="text" formControlName="email"  [(ngModel)]="teacher.email"  class="form-control" autofocus>
+    </div>
+    <div *ngIf="controls.email.touched &&controls.email.errors?.required"   class="alert alert-danger  margin" style="text-align: start;">{{'shared.requiredEmail'|translate}}</div>
+    <div *ngIf="controls.email.touched &&controls.email.errors?.email"   class="alert alert-danger  margin" style="text-align: start;">{{'shared.requiredEmailFormat'|translate}}</div>
+
+      <!--End Teacher Email group-->
+  
+  
+
+
+
+
+
+
+
+                                 
+
+              <!--Start Teacher  Address group-->
+<div>
+                <label  class="control-label">{{'teacher.address'|translate}}</label>
+          
+                  <div>
+                      <input type="text" formControlName="address"  [(ngModel)]="teacher.address"  class="form-control">
+                  </div>
+                  <div *ngIf="controls.address.touched &&controls.address.errors?.required"   class="alert alert-danger  margin" style="text-align: start;">{{'teacher.requiredAddress'|translate}}</div>
+          
+</div>     
+              <!--End Teacher  Address group-->
+          
+          
+
+
+
+
+
+
+
+     <!--Start Teacher  degree group-->
+  <div>
+      <label  class="control-label">{{'teacher.degree'|translate}}</label>
+
+        <div>
+            <input type="text" formControlName="degree"  [(ngModel)]="teacher.degree"  class="form-control">
+        </div>
+        <div *ngIf="controls.degree.touched &&controls.degree.errors?.required"   class="alert alert-danger  margin" style="text-align: start;">{{'teacher.requiredDegree'|translate}}</div>
+
+</div>
+          <!--End Teacher  degree group-->
+
+
+
+
+   <!--Start Teacher  Years Of Experience group-->
+  <div>
+    <label  class="control-label">{{'teacher.yearsOfExperience'|translate}}</label>
+
+      <div>
+          <input type="number" formControlName="yearsOfExperience"  [(ngModel)]="teacher.yearsOfExperience"  class="form-control">
+      </div>
+      <div *ngIf="controls.yearsOfExperience.touched &&controls.yearsOfExperience.errors?.required"   class="alert alert-danger  margin" style="text-align: start;">{{'teacher.requiredYearsOfExperience'|translate}}</div>
+
+</div>
+        <!--End Teacher  Years Of Experience group-->
+
+
+
+          
+          
+
+         <!--Start Teacher Phone Number group-->
+         <div>
+          <label  class="control-label">{{'shared.phoneNumber'|translate}}</label>
+  
+            <div>
+                <input type="number" formControlName="phoneNumber"  [(ngModel)]="teacher.phoneNumber"  class="form-control">
+            </div>
+            <div *ngIf="controls.phoneNumber.touched &&controls.phoneNumber.errors?.required"   class="alert alert-danger  margin" style="text-align: start;">{{'shared.requiredPhoneNumber'|translate}}</div>
+  </div>
+    
+              <!--End Teacher  Phone Number group-->
+    
+
+
+                   <!--Start Teacher Ssn group-->
+<div>
+          <label  class="control-label">{{'shared.ssn'|translate}}</label>
+  
+            <div>
+                <input type="number" formControlName="ssn"  [(ngModel)]="teacher.ssn"  class="form-control">
+            </div>
+            <div *ngIf="controls.ssn.touched &&controls.ssn.errors?.required"   class="alert alert-danger  margin" style="text-align: start;">{{'shared.requiredSsn'|translate}}</div>
+    
+    </div>
+              <!--End Teacher Ssn group-->
+
+
+<br/>
+
+
+
+   <!-- Start Level Group-->
+    <div class="outline form-group " style="text-align: start;" > 
+  
+    
+    <!-- <levels></levels> -->
+    </div> 
+  
+    <!--End Level Group-->
+       
+
+
+
+   <!--Start Teacher  Subject  -->
+   <div class="outline form-group " style="text-align: start;" > 
+    
+     <label class="control-label">{{'subject.title'|translate}}:</label>
+    <input readonly type="text" class="form-control"  value="{{teacher.subject}}"/><br/>
+   <app-subjects></app-subjects>
+
+   </div>
+   <!-- End Teacher  Subject -->
+
+
+   <div style="display:none"  class="alert messagesuccess alert-success">{{'teacher.add.success'|translate}}</div>
+   <div style="display:none"  class="alert messageerror alert-danger">{{'teacher.add.failure'|translate}}</div>
+
+    
+  </div>
+
+
+</div>
+
+
+
+
+  </div>
+
+
+
+  <hr/>
+
+  <div style="text-align: center;margin-bottom: 5px;">
+    <button  [disabled]="formData.invalid" (click)="addTeacher()" class="btn btn-danger">{{'teacher.add.title'|translate}}</button>
+
+  </div>
+      
+      <!--End form group-->
+    </form>
+   
+    <!--End form-->
+     </div>
+    
+     <!--End Container-->

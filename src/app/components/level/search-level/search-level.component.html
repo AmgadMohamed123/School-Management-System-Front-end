@@ -1,0 +1,62 @@
+<div class="container text-center" >
+    <form  #searchForm="ngForm"  (ngSubmit)="search(name.value)">
+        <div class="form-group text-center" style="width: 35%;margin: auto;margin-top: 25px;">
+          <input type="text" ngModel #name="ngModel" name="name"  class="form-control" required placeholder="{{'search.level'|translate}}">
+    
+        </div>
+       
+        <div *ngIf="name.touched &&name.errors?.required"  style="width: 35%;margin: auto;margin-top: 25px;"   class="alert alert-danger col-sm-5 ">{{'shared.searchError'|translate}}</div>
+    
+        
+      
+    
+    
+       <div class="form-group text-center" style="margin-top: 25px;">
+    
+        <button type="submit" [disabled]="searchForm.invalid"  class="btn btn-primary">{{'shared.search'|translate}}</button>
+    </div>
+      </form>
+      <div style="display:none"  class="alert  alert-danger messageerror">{{'shared.noSearchResult'|translate}}</div>
+
+        <h3 class="text-center">{{'shared.searchResult'|translate}}</h3>
+        <table class="table table-hover  table-stripped table-bordered">
+            <thead class="thead-dark">
+              <tr>
+                <th>{{'shared.id'|translate}}</th>
+                <th>{{'level.name'|translate}}</th>
+                <th>{{'level.floor'|translate}}</th>
+                <th>{{'level.maxSize'|translate}}</th>
+                <th>{{'level.currentSize'|translate}}</th>
+                
+              </tr>
+            </thead>
+            <tbody>
+              <tr *ngFor="let level of levels "  class="text-center" (click)="detailsLevel(level)">
+          
+            <th scope="row">{{level.id}}</th>
+            <td>{{level.name}}</td>
+            <td>{{level.floor}}</td>
+            <td>{{level.maxSize}}</td>
+            <td>{{level.currentSize}}</td>
+           
+              </tr>
+           
+            </tbody>
+        
+          </table>
+          <div class="btn-group horizontal-middle">
+            <button type="button" class="btn btn-primary btn-lg" [disabled]="currentPage==0"
+                (click)="First()">{{'shared.first'|translate}}</button>
+    
+            <button type=" button" class="btn btn-primary btn-lg" [disabled]="currentPage==0"
+                (click)="Previous()">{{'shared.previous'|translate}}</button>
+    
+            <button type="button" class="btn btn-primary btn-lg" [disabled]="currentPage==totalPages -1 "
+                (click)="Next()">{{'shared.next'|translate}}</button>
+    
+            <button type="button" class="btn btn-primary btn-lg" [disabled]="currentPage==totalPages -1"
+                (click)="Last()">{{'shared.last'|translate}}</button>
+        </div>
+
+
+          </div>

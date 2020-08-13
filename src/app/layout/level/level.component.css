@@ -1,0 +1,9 @@
+.level-hover:hover{
+    background-color:dodgerblue;
+}
+.level-hover{
+    transition: linear 0.8s;
+}
+.is-done{
+    background-color:dodgerblue;
+}

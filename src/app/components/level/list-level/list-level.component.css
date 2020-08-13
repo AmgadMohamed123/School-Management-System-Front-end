@@ -1,0 +1,13 @@
+.oprations button{
+    margin-left: 20px;
+}
+h2{
+    margin-bottom: 20px;
+}
+.messagesuccess,.messageerror{
+    display: none;   
+}
+.distance{
+    margin-top: 10px;
+    margin-bottom: 10px;
+}

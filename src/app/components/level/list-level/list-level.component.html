@@ -1,0 +1,55 @@
+<div class="container text-center">
+    <h2 class="text-center">{{'level.levels'|translate}}</h2>
+  
+    <table class="table table-bordered table-hover table-stripped">
+        <thead class="thead-dark">
+          <tr class="text-center">
+            <th scope="col">{{'shared.id'|translate}}</th>
+            <th scope="col">{{'level.name'|translate}}</th>
+            <th scope="col">{{'level.floor'|translate}}</th>
+            <th scope="col">{{'level.maxSize'|translate}}</th>
+            <th scope="col">{{'level.currentSize'|translate}}</th>
+    
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let level of levels" class="text-center" (click)="detailsLevel(level)">
+            <th scope="row">{{level.id}}</th>
+            <td>{{level.name}}</td>
+            <td>{{level.floor}}</td>
+            <td>{{level.maxSize}}</td>
+            <td>{{level.currentSize}}</td>
+     
+          </tr>
+          
+          
+        </tbody>
+      </table>
+
+      <div class="alert messagesuccess alert-success">{{'level.delete.success'|translate}}</div>
+      <div class="alert messageerror alert-danger">{{'level.delete.failure'|translate}}</div>
+  
+
+
+      <div class="btn-group horizontal-middle distance">
+        <button type="button" class="btn btn-primary btn-lg" [disabled]="currentPage==0"
+            (click)="First()">{{'shared.first'|translate}}</button>
+
+        <button type=" button" class="btn btn-primary btn-lg" [disabled]="currentPage==0"
+            (click)="Previous()">{{'shared.previous'|translate}}</button>
+
+        <button type="button" class="btn btn-primary btn-lg" [disabled]="currentPage==totalPages -1 "
+            (click)="Next()">{{'shared.next'|translate}}</button>
+
+        <button type="button" class="btn btn-primary btn-lg" [disabled]="currentPage==totalPages -1"
+            (click)="Last()">{{'shared.last'|translate}}</button>
+    </div>
+
+
+
+      <div  class="container text-center oprations">
+          <button class="btn btn-success" routerLink="/add-level">{{'level.add.level'|translate}}</button>
+          <button class="btn btn-primary" routerLink="/search-level">{{'level.search.level'|translate}}</button>
+      </div>
+
+      </div>

@@ -1,0 +1,42 @@
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark" >
+    <a class="navbar-brand" routerLink="/">
+      
+      <img src="assets/images/schoollogo.jpg"/>
+    </a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarNav">
+      <ul class="navbar-nav">
+        <li class="nav-item ">
+          <a class="nav-link"  routerLinkActive="active" [routerLinkActiveOptions]="{exact:true}" routerLink="/">{{'shared.home'|translate}}</a>
+        </li>
+        
+        
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+           {{'shared.management'|translate}} 
+          </a>
+          <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+            <a class="dropdown-item" routerLink="list-teacher">{{'teacher.list'|translate}}</a>
+            <a class="dropdown-item" routerLink="list-level">{{'level.levels'|translate}}</a>
+            <a class="dropdown-item" routerLink="list-student">{{'student.students'|translate}}</a>
+            <div class="dropdown-divider"></div>
+            <a class="dropdown-item" routerLink="list-employee">{{'employee'|translate}}</a>
+            <a class="dropdown-item" routerLink="list-subject">{{'subject.subjects'|translate}}</a>
+
+          </div>
+        </li>
+      </ul>
+
+     
+      <div  class="form-inline login-form mr-auto  p-2 my-2 my-lg-0" >
+        <button routerLink="login" class="btn btn-success my-2 my-sm-0" type="submit">{{'shared.login' |translate}}</button>
+
+        <button routerLink="register" class="btn btn-warning my-2 my-sm-0" type="submit">{{'shared.register' |translate}}</button>
+      </div>
+
+
+
+    </div>
+  </nav>

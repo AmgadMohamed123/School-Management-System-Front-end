@@ -1,0 +1,23 @@
+.personal:hover{
+    background-color: #0390fc;
+}
+.personal{
+    transition: linear 0.5s;
+}
+.scientific:hover{
+    background-color: #db5a56;
+}
+.scientific{
+    transition: linear 0.5s;
+}
+
+.operations{
+    text-align: center;
+    
+}
+.operations button{
+    margin-left: 8px;
+}
+.list{
+    margin-bottom: 15px;
+}

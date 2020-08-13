@@ -1,0 +1,139 @@
+<!--Start Container-->
+<div class="container " >
+    <h1 class="text-center" style="color:indianred;margin-top: 15px;margin-bottom:20px;margin-right: 150px;">{{'UPDATEEMPLOYEE'|translate}}</h1>
+  <hr/>
+    <!--Start Form-->
+    <form #employeeForm="ngForm">
+      <!--Start Row-->
+    <div class="row">
+     
+        <div class="col-sm-6">
+    
+        
+        
+        <!--Start Employee Fullname group-->
+  
+        <div class="form-group">
+          <div >
+              <input type="text" #fullName="ngModel" name="fullName" ngModel   placeholder="{{'FULLNAME'|translate}}" required class="form-control" autofocus>
+          </div>
+          <div *ngIf="fullName.touched &&fullName.errors?.required"   class="alert alert-danger  margin" style="text-align: start;">{{'REQUIRED-FULLNAME'|translate}}</div>
+  
+      </div>
+            <!--End Employee Fullname group-->
+  
+  
+  
+  
+            <!--Start Employee Age group-->
+  
+      <div class="form-group">
+          <div>
+              <input type="number" #age="ngModel"  ngModel required  name="age" placeholder="{{'AGE'|translate}}" class="form-control">
+          </div>
+          <div *ngIf="age.touched &&age.errors?.required"   class="alert alert-danger  margin" style="text-align: start;">{{'REQUIRED-AGE'|translate}}</div>
+  
+      </div>
+  
+                <!--End Employee Age group-->
+  
+           
+  
+              <!--Start Employee Date of Birth group-->
+  
+  
+      <div class="form-group " style="text-align: start;">
+          <label  class=" control-label ">{{'DATEOFBIRTH'|translate}}</label>
+          <div >
+  
+            <input class="form-control" type="date" value="2011-08-19" id="example-date-input" #birthdate="ngModel"  name="birthdate" required  ngModel>
+  
+          </div>
+          <div *ngIf="birthdate.touched &&birthdate.errors?.required"   class="alert alert-danger col-sm-5 margin">please enter birthdate</div>
+  
+      </div>
+  
+              <!--End Employee Date of Birth group-->
+  
+  
+                          <!--Start Employee Date of  registration-->
+  
+  
+      <div class="form-group" style="text-align: start;">
+        <label  class="control-label">{{'HIREDATE'|translate}}</label>
+        <div >
+            <input type="date"  #hiredate="ngModel"  name="hiredate" required  ngModel  class="form-control">
+        </div>
+  
+        <div *ngIf="hiredate.touched &&hiredate.errors?.required"   class="alert alert-danger col-sm-6 margin">please enter hire date</div>
+  
+    </div>
+  
+  
+                            <!--End Employee Date of  registration-->
+  
+  
+  
+  
+  
+                            <!--Start Employee Gender-->
+                            <div class="outline form-group gender-outline" style="text-align: start;">
+                            <label>{{'GENDER'|translate}}:</label>
+                            &nbsp;&nbsp;&nbsp;&nbsp;
+                            <div class="custom-control  custom-radio custom-control-inline">
+                              <input type="radio" value="Male" class="custom-control-input"  id="defaultInline1" name="gender">
+                              <label class="custom-control-label" for="defaultInline1">{{'MALE'|translate}}</label>
+                            </div>
+                            <div class="custom-control  custom-radio custom-control-inline">
+                              <input type="radio" value="Female" class="custom-control-input"  id="defaultInline2" name="gender">
+                              <label class="custom-control-label" for="defaultInline2">{{'FEMALE'|translate}}</label>
+                            </div>
+                            </div>
+                        
+                                <!--End Employee Gender-->
+  
+  
+  
+      
+   <!--Start Subject Group-->
+   <div class="outline form-group " style="text-align: start;" >
+  
+    <label>{{'EMPLOYEEJOB'|translate}}:</label>
+    
+    <select class="form-control">
+        <option selected disabled>{{'CHOOSEJOB'|translate}}</option>
+        <option>{{'MANAGER'|translate}}</option>
+        <option>{{'MANAGERASSISTANT'|translate}}</option>
+        <option>{{'SCHOOLREPRESENTATIVE'|translate}}</option>
+        <option>{{'ITENGINEER'|translate}}</option>
+        <option>{{'SOCIALSERVICEEmployee'|translate}}</option>
+        <option>{{'STUDENTAFFAIRS'|translate}}</option>
+        <option>{{'LIBRARIAN'|translate}}</option>
+        <option>{{'STOCKREPRESENTATIVE'|translate}}</option>
+        <option>{{'RECEPTIONIST'|translate}}</option>
+        <option>{{'DOORMAN'|translate}}</option>
+
+
+
+
+    </select>
+    
+    </div>
+  
+    <!--End Subject Group-->
+  
+  
+  
+  </div>
+  </div>
+      <!--End row-->
+  <hr/>
+      <button  style="margin:auto;margin-bottom: 5px;display:block;" [disabled]="employeeForm.invalid" class="btn btn-danger">{{'UPDATEEMPLOYEE'|translate}}</button>
+      <button  routerLink="/list-employee" style="margin:auto;display:block;"  class="btn btn-secondary">{{'EMPLOYEELISTRETURNBUTTON'|translate}}</button>
+
+    </form>
+   
+    <!--End form-->
+     </div>
+    
+     <!--End Container-->

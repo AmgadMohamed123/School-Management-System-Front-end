@@ -1,0 +1,14 @@
+h2{
+    color:rgba(205, 92, 92, 0.952);
+    margin-top: 15px;
+    margin-bottom:20px;
+    margin-right: 150px;
+}
+.year-distance,.month-distance{
+margin-bottom: 50px;
+}
+.btn-distance{
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+

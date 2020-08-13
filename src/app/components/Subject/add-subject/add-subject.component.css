@@ -1,0 +1,17 @@
+.btn-distance{
+    margin:auto;
+    margin-bottom: 10px;
+    display:block;
+}
+.align{
+    text-align: start;
+}
+h3{
+    color:indianred;
+    margin-top: 15px;
+    margin-bottom:20px;
+    margin-right: 150px;
+}
+.messagesuccess,.messageerror{
+    display:none
+}

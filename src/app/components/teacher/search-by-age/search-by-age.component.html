@@ -1,0 +1,73 @@
+<div class="container text-center" >
+    <form  #searchForm="ngForm"  (ngSubmit)="search(startAge.value,endAge.value)">
+        <div class="form-group align">
+            <label>{{'shared.startAge'|translate}}</label>
+          <input type="number" ngModel #startAge="ngModel" name="startAge" class="form-control" required >
+          <label>{{'shared.endAge'|translate}}</label>
+          <input type="number" ngModel #endAge="ngModel" name="endAge" class="form-control" required>
+
+        </div>
+       
+        <div *ngIf="startAge.touched &&startAge.errors?.required"  style="width: 35%;margin: auto;margin-top: 25px;"   class="alert alert-danger col-sm-5 ">{{'shared.searchError'|translate}}</div>
+    
+        <div *ngIf="endAge.touched &&endAge.errors?.required"  style="width: 35%;margin: auto;margin-top: 25px;"   class="alert alert-danger col-sm-5 ">{{'shared.searchError'|translate}}</div>
+
+    
+      
+    
+    
+       <div class="form-group text-center" style="margin-top: 25px;">
+    
+        <button type="submit" [disabled]="searchForm.invalid" class="btn btn-primary">{{'shared.search'|translate}}</button>
+    </div>
+      </form>
+
+        <h3 class="text-center">{{'shared.searchResult'|translate}}</h3>
+        <table class="table table-hover  table-stripped table-bordered">
+            <thead class="thead-dark">
+              <tr>
+                <th>{{'shared.id'|translate}}</th>
+                <th>{{'shared.name'|translate}}</th>
+                <th>{{'shared.age'|translate}}</th>
+                <th>{{'shared.gender'|translate}}</th>
+                <th>{{'teacher.hireDate'|translate}}</th>
+                
+              </tr>
+            </thead>
+            <tbody>
+              <tr class="text-center" *ngFor="let teacher of teachers " (click)="detailsTeacher(teacher.id)">
+                <td>{{teacher.id}}</td>
+                <td>{{teacher.name}}</td>
+                <td>{{teacher.age}}</td>
+                <td>{{teacher.gender}}</td>
+                <td>{{teacher.hireDate|date}}</td>
+
+                <!-- <td><button (click)="updateTeacher(teacher.id)"   class="btn btn-primary">{{'shared.update'|translate}}</button></td>
+                <td><button (click)="deleteTeacher(teacher.id)"  class="btn btn-danger">{{'shared.delete'|translate}}</button></td>
+                <td><button (click)="detailsTeacher(teacher.id)" class="btn btn-warning">{{'shared.details'|translate}}</button></td>
+         -->
+              </tr>
+           
+            </tbody>
+        
+          </table>
+        
+
+          <div class="btn-group horizontal-middle">
+            <button type="button" class="btn btn-primary btn-lg" [disabled]="currentPage==0"
+                (click)="First()">{{'shared.first'|translate}}</button>
+    
+            <button type=" button" class="btn btn-primary btn-lg" [disabled]="currentPage==0"
+                (click)="Previous()">{{'shared.previous'|translate}}</button>
+    
+            <button type="button" class="btn btn-primary btn-lg" [disabled]="currentPage==totalPages -1 "
+                (click)="Next()">{{'shared.next'|translate}}</button>
+    
+            <button type="button" class="btn btn-primary btn-lg" [disabled]="currentPage==totalPages -1"
+                (click)="Last()">{{'shared.last'|translate}}</button>
+        </div>
+    
+
+
+
+          </div>

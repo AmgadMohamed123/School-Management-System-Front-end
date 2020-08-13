@@ -1,0 +1,29 @@
+<app-navbar></app-navbar>
+
+
+  <!-- <button (click)="changeCurrentLang('en')" class="btn btn-primary">En</button>
+  <button (click)="changeCurrentLang('ar')" class="btn btn-warning">Ar</button> -->
+
+
+  <select #lang [(ngModel)]='selectedValue' (change)="changeCurrentLang(lang.value)">
+
+    <option value='en'>{{'shared.en'|translate}}</option>
+    <option value='ar'>{{'shared.ar'|translate}}</option>
+
+  </select>
+
+
+
+
+<div class="container">
+<router-outlet></router-outlet>
+  <!-- Start Scroll To Top -->
+        
+  <div id="scroll-top"> 
+
+    <button class="btn btn-primary" id="top">Top</button>
+</div>
+
+<!-- End Scroll To Top -->
+
+</div>

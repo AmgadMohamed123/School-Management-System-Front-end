@@ -1,0 +1,8 @@
+.is-done{
+    background-color: blue; 
+   }
+   ul li{
+    padding-left: 10px;
+    padding-right: 10px;
+    margin: 2px;
+}

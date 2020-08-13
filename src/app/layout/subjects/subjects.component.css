@@ -1,0 +1,9 @@
+.is-done{
+    background-color: #EC971F; 
+   }
+   .subject-hover:hover{
+       background-color:dodgerblue;
+   }
+   .subject-hover{
+       transition: linear 0.8s;
+   }

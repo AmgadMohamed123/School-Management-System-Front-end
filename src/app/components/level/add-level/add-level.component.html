@@ -1,0 +1,98 @@
+<!--Start Container-->
+<div class="container " style="text-align: start;" >
+    <h3 class="text-center" style="color:indianred;margin-top: 15px;margin-bottom:20px;margin-right: 150px;">{{'level.add.level'|translate}}</h3>
+  <hr/>
+    <!--Start Form-->
+    <form (ngSubmit)="addLevel()" [formGroup]="addForm">
+      <!--  -->
+      <!--Start Row-->
+    <div class="row">
+      <div >
+        <img src="assets/images/classroom.jpg" width="400px" height="400px"/>
+    </div>
+        <div class="col-sm-6">
+    
+           
+        
+        <!--Start Class name group-->
+  
+        <div class="form-group">
+          <div >
+              <label>{{'level.name'|translate}}</label>
+              <input type="text"   formControlName="name"    [(ngModel)]="myLevel.name"    class="form-control" autofocus>
+          </div>
+          <div *ngIf="controls.name.touched &&controls.name.errors?.required"   class="alert alert-danger  margin" style="text-align: start;">{{'level.requiredName'|translate}}</div>
+  
+      </div>
+
+
+       
+            <!--End Class name group-->
+  
+  
+  
+  
+            <!--Start Class Floor group-->
+  
+       <div class="form-group">
+          <div>
+            <label>{{'level.floor'|translate}}</label>
+              <input type="number" formControlName="floor"    [(ngModel)]="myLevel.floor"       class="form-control">
+          </div>
+          <div *ngIf="controls.floor.touched &&controls.floor.errors?.required"   class="alert alert-danger  margin" style="text-align: start;">{{'level.floor'|translate}}</div>
+  
+      </div> 
+  
+                <!--End Class Floor group-->
+  
+           
+  
+              <!--Start class max Size  group-->
+  
+ 
+              <div class="form-group">
+                <div>
+                    <label>{{'level.maxSize'|translate}}</label>
+                    <input type="number" formControlName="maxSize"    [(ngModel)]="myLevel.maxSize"     class="form-control">
+                </div>
+                <div *ngIf="controls.maxSize.touched &&controls.maxSize.errors?.required"   class="alert alert-danger  margin" style="text-align: start;">{{'level.requiredMax'|translate}}</div>
+        
+            </div>  
+      
+  
+              <!--End class max Size group-->
+  
+  
+                          <!--Start class current size-->
+  
+  
+                           <div class="form-group">
+                            <div>
+                                <label>{{'level.currentSize'|translate}}</label>
+                                <input type="number" formControlName="currentSize"    [(ngModel)]="myLevel.currentSize"  class="form-control">
+                            </div>
+                            <div *ngIf="controls.currentSize.touched &&controls.currentSize.errors?.required"   class="alert alert-danger  margin" style="text-align: start;">{{'level.requiredCurrent'|translate}}</div>
+                    
+                        </div>  
+  
+
+
+                        <div class="alert messagesuccess alert-success">{{'level.add.success'|translate}}</div>
+                        <div class="alert messageerror alert-danger">{{'level.add.failure'|translate}}</div>
+            
+  
+                            <!--End class current size-->  
+                          
+  </div>
+  </div>
+      <!--End row-->
+  <hr/>
+      <button   [disabled]="addForm.invalid" class="btn btn-danger btn-distance">{{'level.add.level'|translate}}</button>
+      <button   routerLink="/list-level" class="btn btn-secondary btn-distance">{{'level.listReturn'|translate}}</button>
+
+    </form>
+
+    <!--End form-->
+     </div>
+    
+     <!--End Container-->

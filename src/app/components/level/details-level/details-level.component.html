@@ -1,0 +1,57 @@
+<!--Start Container-->
+<div class="container text-center">
+    <h1> {{'level.info'|translate}}
+    </h1>
+  <hr/>
+    <!--Start Form-->
+    <form #levelForm="ngForm">
+      <!--Start Row-->
+    <div class="row" >
+  
+      <!--start Left-->
+      <div class="col-lg-6 col-sm-12 left">
+        
+        <!--start personal Information-->
+ 
+
+        <div class="card" style="width: 25rem;">
+          <div class="card-header" style="background-color: #0390fc;color: white;">
+            {{'level.generalInfo'|translate}}
+          </div>
+          <div class="list-group list-group-flush">
+            <label class="list-group-item personal" style="font-weight: bold;">{{'level.name'|translate}} : <span style="font-weight: normal;">{{level.name}}</span></label>
+            <label class="list-group-item personal" style="font-weight: bold;">{{'level.floor'|translate}} : <span  style="font-weight: normal;">{{level.floor}}</span></label>
+            <label class="list-group-item personal" style="font-weight: bold;">{{'level.maxSize'|translate}}: <span style="font-weight: normal;">{{level.maxSize}}</span></label>
+            <label class="list-group-item personal" style="font-weight: bold;">{{'level.currentSize'|translate}}: <span style="font-weight: normal;">{{level.currentSize}}</span></label>
+          </div>
+        </div>
+    
+
+  <hr/>   
+  <div style="display:none"  class="alert messagesuccess alert-success">{{'level.delete.success'|translate}}</div>
+  <div style="display:none"  class="alert messageerror alert-danger">{{'level.delete.failure'|translate}}</div>
+
+
+    </div>      <!--End personal Information-->
+
+     
+
+
+
+ </div>
+ <div class="operations">
+  <button (click)="updateLevel(level.id)"   class="btn btn-primary">{{'shared.update'|translate}}</button>
+  <button (click)="deleteLevel(level.id)"   class="btn btn-danger">{{'shared.delete'|translate}}</button>
+
+</div>
+
+  <hr/>
+  <div class="list">
+      <button  routerLink="/list-level" style="margin:auto"  class="btn btn-warning list">{{'teacher.listReturn'|translate}}</button>
+  </div>
+    </form>
+  
+    <!--End form-->
+     </div>
+    
+     <!--End Container-->

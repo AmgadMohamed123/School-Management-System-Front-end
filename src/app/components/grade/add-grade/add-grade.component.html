@@ -1,0 +1,87 @@
+<div class="container text-center">
+
+
+    <h2>{{'grade.header'|translate}}</h2>
+  <hr/>
+
+  <!--Start Grade Date  group-->
+  <form [formGroup]="gradeForm" (ngSubmit)="add()">
+
+<!--Years Section-->
+<div class="form-group ">
+  <select class=" form-control years year-distance" formControlName="year" (change)="handleYearChange($event)">
+    <option selected disabled>{{'grade.chooseYear'|translate}}</option>
+
+</select>
+
+</div>
+
+<!--Months Section-->
+<!-- <div class="form-group ">
+
+<select class="form-control month-distance" formControlName="month" (change)="handleMonthChange($event)" >
+  <option selected disabled>{{'grade.chooseMonth'|translate}}</option>
+
+<option >{{'grade.month.january'|translate}}</option>
+<option>{{'grade.month.february'|translate}}</option>
+<option>{{'grade.month.march'|translate}}</option>
+<option>{{'grade.month.april'|translate}}</option>
+<option>{{'grade.month.may'|translate}}</option>
+<option>{{'grade.month.june'|translate}}</option>
+<option>{{'grade.month.july'|translate}}</option>
+<option>{{'grade.month.august'|translate}}</option>
+<option>{{'grade.month.september'|translate}}</option>
+<option>{{'grade.month.october'|translate}}</option>
+<option>{{'grade.month.november'|translate}}</option>
+<option>{{'grade.month.december'|translate}}</option>
+
+</select>
+
+
+
+
+</div> -->
+
+
+
+
+
+
+
+
+<!--Months Section-->
+<div class="form-group ">
+
+  <select class="form-control month-distance months" formControlName="month" (change)="handleMonthChange($event)" >
+    <option selected  disabled>{{'grade.chooseMonth'|translate}}</option>
+  
+  
+  </select>
+  
+  
+  
+  
+  </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!-- Student degree -->
+
+    <h4>{{'grade.degree'|translate}}</h4>
+    <ckeditor  [(ngModel)]="grade.degree" formControlName="degree"></ckeditor>
+
+    <button class="btn btn-primary btn-distance" type="submit">{{'grade.add'|translate}}</button>
+  </form>
+
+</div>

@@ -1,0 +1,26 @@
+.personal:hover{
+    background-color: #0390fc;
+}
+.personal{
+    transition: linear 0.5s;
+}
+.gurdian:hover{
+    background-color: #db5a56;
+}
+.gurdian{
+    transition: linear 0.5s;
+
+}
+h3{
+    color:grey;
+    margin-top: 15px;
+    margin-bottom:20px;
+    margin-right: 150px;
+}
+.operations{
+    text-align: center;
+    
+}
+.operations button{
+    margin-left: 8px;
+}

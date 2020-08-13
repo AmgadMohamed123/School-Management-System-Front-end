@@ -1,0 +1,38 @@
+<div class="container"  style="text-align: start;">
+    <div class="card card-container">
+      <img
+        id="profile-img"
+        src="assets/images/avatar_1x.png"
+        class="profile-img-card"
+      />
+     
+</div>
+
+
+
+<form #loginForm="ngForm">
+  <div class="form-group " >
+    <label for="exampleInputEmail1">{{'userName'|translate}}</label>
+    <input type="text" #userName="ngModel" [(ngModel)]="user.userName" name="userName" ngModel class="form-control" required >
+  </div>
+  <div class="alert alert-danger" *ngIf="userName.touched &&userName.errors?.required">
+    {{"requiredUserName"|translate}}
+  </div>
+
+
+  <div class="form-group">
+    <label for="exampleInputPassword1">{{'passWord'|translate}}</label>
+    <input type="password" #input #password="ngModel" [(ngModel)]="user.password" name="password" ngModel class="form-control" required>
+    <button (click)="changeInput(input)" class="btn btn-danger">{{'showHide'|translate}}</button>
+
+  </div>
+  <div  class="alert alert-danger"  *ngIf="password.touched &&password.errors?.required">
+    {{"requiredPass"|translate}}
+ </div>
+ <hr/>
+ <div class="text-center">
+  <button  type="submit"  [disabled]="loginForm.invalid"  class="btn btn-success">{{'login'|translate}}</button>
+
+ </div>
+</form>
+</div>

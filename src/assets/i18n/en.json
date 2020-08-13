@@ -1,0 +1,347 @@
+ {
+
+   "shared":{
+      "home":"Home",
+      "login":"Login",
+      "en":"English",
+      "ar":"اللغه العربيه",
+      "showHide":"Show/Hide",
+      "logOut":"Log out",
+      "userName":"User Name",
+      "passWord":"Password",
+      "admin":"Admin",
+      "user":"User",
+      "userType":"User Type",
+      "userTypeSelect":"Select User Type",
+      "register":"Register",
+       "requiredUserName":"Please enter your user name ",
+       "requiredName":"Please enter  name",
+       "requiredAge":"Please enter age",
+       "maritalStatus":"Marital Status",
+       "requiredMaritalStatus":"Please enter Marital Status",
+       "requiredEmail":"Please enter Email",
+       "requiredPassLength":"Your password length must be larger than 6 ",
+       "requiredEmailFormat":"Please enter a valid email format",
+       "ssn":"Social Security Number",
+       "requiredSsn":"Please Enter Social Sequrity Number",
+       "phoneNumber":"Phone Number",
+       "requiredPhoneNumber":"Please Enter Phone Number",
+       "desc":"Notes",
+       "notFound":"This link is not found",
+       "email":"Email",
+       "navbar":"SMS",
+       "features":"Features",
+       "pricing":"Pricing",
+       "teacher":"Teacher",
+       "school":"School",
+       "Id":"id",
+       "name":"Name", 
+       "age":"Age",
+       "gender":"Gender",
+       "female":"Female",
+       "male":"Male",
+       "single":"Single",
+       "married":"Married",
+       "employee":"Employee",
+       "management":"Management",
+       "keep":"Keep In Touch With",
+       "info":"Sign Up For Newsletter Dont Worry About Spam We Hate It  nczncn xcnbxzcxnc xcnxnzcnzx bxzcbxzbcbzxb.",
+       "subscribe":"Subscribe",
+       "holder":"Write Your Email",
+       "pic1":"School Field",
+       "pic2":"School leveles",
+       "pic3":"School Floors",
+       "PIC4":"School Tables",
+       "info1":"NZXCCCCCCCCCCCXZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZ",
+       "info2":"NZXCCCCCCCCCCCXZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZ",
+       "info3":"NZXCCCCCCCCCCCXZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZ",
+       "info4":"NZXCCCCCCCCCCCXZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZ",
+       "id":"Id",
+      "address":"Address",
+      "generalInfo":"General Inforamtion",
+      "updatedSuccessfully":"Updated Successfully",
+      "notUpdatedSuccessfully":"Not updated successfully",
+      "deletedSuccessfully":"Deleted Successfully",
+      "notDeletedSuccessfully":"Not deleted successfully",
+      "birthDate":"Birth Date",
+      "birthDateRequired":"Please Enter the birth date",
+      "hireDate":"Hire Date",
+      "actions":"Actions",
+      "update":"Update",
+      "details":"Details",
+      "delete":"Delete",
+      "search":"Search",
+      "searchBy":"Search By",
+      "searchError":"Please enter search key",
+      "searchResult":"Search Result",
+      "noSearchResult":"No Search Results",
+      "next":"Next",
+      "previous":"Prev",
+      "last":"Last",
+      "first":"First",
+      "startAge":"Start Age",
+      "endAge":"End Age",
+      "searchFailure":"No data found please try with different criteria"
+   },
+       
+
+
+
+
+
+
+
+
+      "student":{
+         "add":{
+            "student":"Add Student",
+            "success":"Added Successfully",
+            "failure":"Not Added Successfully"
+           },
+           "update":{
+            "student":"Update Student",
+            "success":"Updated Successfully",
+            "failure":"Not Updated Successfully" 
+         },
+         "search":{
+            "student":"Search Student"
+         },
+      
+         "delete":{
+            "student":"Delete Student",
+            "success":"Deleted Successfully",
+            "failure":"Not Deleted Successfully"
+            
+         },
+         "details":{
+            "student":"Student Details"
+         },
+      "title":"Student",  
+      "students":"Students List",
+      "name":"Student Name",
+      "gurdianSsn":"Gurdian Social Security Number",
+      "requiredGurdianSsn":"Please Enter Gurdian Social Security Number ",
+      "gurdianName":"Gurdian Name",
+      "joinDate":"Join Date",
+      "joinDateRequired":"Please Enter the join date",
+      "address":"Address",
+      "info":"Student Info",
+      "personalInfo":"Personal Information",
+      "gurdianPhoneNumber":"Gurdian Phone Number",
+      "requiredGurdianPhoneNumber":"Please Enter Gurdian Phone Number ",
+      "gurdianPersonalInfo":"Gurdian Personal Information",
+      "requiredGurdianName":"Please Enter Gurdian Name ",
+      "requiredStatus":"Please Enter Student Status",
+      "requiredAddress":"Please Enter Student Address",
+      "requiredFeesPayed":"Please Enter Fees Payed",
+      "requiredFeesRemained":"Please Enter Fees Remained",
+      "listReturn":"Return to Students list",
+      "ChooseStudentImages":"Choose Student Images",
+      "paidFees":"Fees Payed",
+      "remainFees":"Fees Remain",
+      "status":"Status"
+   },
+    
+
+
+
+
+
+
+
+
+
+    "level":
+    {
+      "add":{
+         "level":"Add Level",
+         "success":"Added Successfully",
+         "failure":"Not Added Successfully"
+        },
+  
+  
+      "update":{
+        "level":"Update Level",
+        "success":"Updated Successfully",
+        "failure":"Not Updated Successfully" 
+     },
+  
+     "search":{
+        "level":"Search Level"
+     },
+  
+     "delete":{
+        "level":"Delete Level",
+        "success":"Deleted Successfully",
+        "failure":"Not Deleted Successfully"
+        
+     },
+     "details":{
+        "level":"Level Details"
+     },  
+      "title":"Level",
+      "choose":"Choose Level",
+      "levels":"Level List",
+      "name":"Level Name",
+      "floor":"Level Floor",
+      "maxSize":"Maximum Size",
+      "currentSize":"Current Size",
+      "info":"Level Information",
+      "generalInfo":"General Inforamtion",
+      "listReturn":"Return To Level List",
+      "requiredName":"Please enter Level name",
+      "requiredFloor":"Please enter Level floor",
+      "requiredMax":"Please enter Level maximum size",
+      "requiredCurrent":"Please enter Level current size"
+    }
+
+    
+    
+    
+    
+    ,
+
+
+
+
+
+
+
+
+
+    "teacher":
+    {
+      "add":{
+         "title":"Add Teacher ",
+         "success":"Added Successfully",
+         "failure":"Not Added Successfully"
+        },
+  
+  
+      "update":{
+        "title":"Update Teacher ",
+        "success":"Updated Successfully",
+        "failure":"Not Updated Successfully" 
+     },
+  
+     "search":{
+        
+        "title":"Search Teacher "
+     },
+  
+     "delete":{
+        
+        "title":"Delete Teacher ",
+        "success":"Deleted Successfully",
+        "failure":"Not Deleted Successfully"
+        
+     },
+     "details":{
+        
+        "title":"Teacher Details "
+     },
+  
+       "list":"Teachers",
+       "name":"Teacher Name",
+       "info":"Teacher Information",
+       "address":"Address",
+       "specialization":"Specialization",
+       "email":"Email",
+       "hireDate":"Hire Date",
+       "salary":"Salary",
+       "degree":"Degree",
+       "levels":"Level List",
+       "requiredHireDate":"Please Enter Hire Date",
+       "requiredSpecialization":"Please Enter Specialization",
+       "requiredDegree":"Please Enter Degree",
+       "requiredSalary":"Please Enter Salary",
+       "requiredAddress":"Please Enter Teacher Address",
+       "requiredYearsOfExperience":"Please enter number of years of experience",
+       "yearsOfExperience":"Years Of Experience",
+       "qualification":"Scientific Qualification",
+       "listReturn":"Return To Teacher List",
+       "personalInfo":"Personal Information",
+       "scientificInfo":"Scientifc Information"
+
+        
+    }
+
+
+,
+
+"subject":
+{
+   "title":"Subject Name",
+   "add":{
+      "title":"Add Subject",
+      "success":"Added Successfully",
+      "failure":"Not Added Successfully"
+   },
+
+   "delete":{
+      "title":"Delete Subject ",
+      "success":"Deleted Successfully",
+      "failure":"Not Deleted Successfully"
+   }
+   ,
+   "update":{
+      "title":"Update Subject ",
+      "success":"Updated Successfully",
+      "failure":"Not Updated Successfully"
+   }
+   ,
+   "details":{
+   "title":"Subject Details "
+   },
+
+   "search":{
+      "title":"Search a Subject"
+   }
+   ,
+   "listReturn":"Return To Subject List",
+   "requiredName":"Please enter subject name",
+   "list":"Subject List",
+   "info":"Subject Information",
+   "generalInfo":"General Inforamtion"
+}
+,
+"grade":{
+   "header":"Add Grade",
+   "chooseYear":"Choose Year",
+   "chooseMonth":"Choose Month",
+   "degree":"Student Degrees",
+   "add":"Add",
+   "month":
+   {
+      "january":"January",
+      "february":"February",
+      "march":"March",
+      "april":"April",
+      "may":"May",
+      "june":"June",
+      "july":"July",
+      "august":"August",
+      "september":"September",
+      "october":"October",
+      "november":"November",
+      "december":"December"
+   }
+}
+,
+"guardian":
+{"shared":{
+   "name":"Guardian Name",
+   "nameMsg":"Please Enter Guardian Name",
+   "job":"Guardian Job",
+   "jobMsg":"Please Enter Guardian Job",
+   "ssn":"Social Security Number",
+   "ssnMsg":"Please Enter Social Security Number",
+   "info":"Guardian",
+   "phoneNumber":"Phone Number",
+   "notes":"Notes"
+}
+
+}
+
+    
+    }

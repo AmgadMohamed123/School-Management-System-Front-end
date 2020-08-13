@@ -1,0 +1,43 @@
+body{
+    height: 4000px;
+  }
+  .container {
+      display: flex; 
+      flex-direction: row;
+       }
+       h1,h3{
+  
+        margin-top: 20px;
+       }
+    img{
+      max-width: 100%;
+      -webkit-box-shadow: 10px 10px 5px 0px rgba(0,0,0,0.75);
+      -moz-box-shadow: 10px 10px 5px 0px rgba(0,0,0,0.75);
+      box-shadow: 10px 10px 5px 0px rgba(0,0,0,0.75);
+      border:2px solid #f1f1f1;
+      height: 300px;
+  
+    }
+  
+    img:hover{
+      transform: scale(1.1,1.1);
+  
+    }
+  
+  
+  
+  
+  
+    /* Start Section Subscribe */
+  
+  .subscribe {background:#EEE;margin-top: 50px;margin-bottom: 50px;}
+  
+  .subscribe .h1 {color:#888;letter-spacing:2px;margin-bottom:20px}
+  
+  .subscribe p {margin-bottom:30px}
+  
+  .subscribe .form-control {border-radius:0;margin-right:-5px;width:300px}
+  
+  .subscribe button {border-radius:0}
+  
+  /* End Section Subscribe */

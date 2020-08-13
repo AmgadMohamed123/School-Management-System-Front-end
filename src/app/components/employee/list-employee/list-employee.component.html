@@ -1,0 +1,36 @@
+<div class="container text-center">
+    <h2 class="text-center">{{'EMPLOYEESLIST'|translate}}</h2>
+    <table class="table table-bordered table-hover table-stripped">
+        <thead class="thead-dark">
+          <tr class="text-center">
+            <th scope="col">{{'ID'|translate}}</th>
+            <th scope="col">{{'FIRSTNAME'|translate}}</th>
+            <th scope="col">{{'LASTNAME'|translate}}</th>
+            <th scope="col">{{'AGE'|translate}}</th>
+            <th colspan="3" class="text-center" scope="col">{{'ACTIONS'|translate}}</th>
+    
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let employee of employees" class="text-center">
+            <th scope="row">{{employee.id}}</th>
+            <td>{{employee.firstname}}</td>
+            <td>{{employee.lastname}}</td>
+            <td>{{employee.age}}</td>
+            <td ><button class="btn btn-warning" routerLink="/update-employee">{{'UPDATE'|translate}}</button></td>
+            <td ><button class="btn btn-primary" routerLink="/details-employee">{{'DETAILS'|translate}}</button></td>
+            <td ><button class="btn btn-danger">{{'DELETE'|translate}}</button></td>
+    
+          </tr>
+          
+          
+        </tbody>
+      </table>
+      <div>
+        <pagination-controls nextLabel="{{'NEXTLABEL'|translate}}" previousLabel="{{'PREVIOUSLABEL'|translate}}"   id="listing_pagination" maxSize="5" directionLinks="true" (pageChange)="page=$event"></pagination-controls>
+      </div>
+      <div  class="container text-center oprations">
+          <button class="btn btn-success" routerLink="/add-employee">{{'ADDEMPLOYEE'|translate}}</button>
+          <button class="btn btn-primary" routerLink="/search-employee">{{'SEARCHEMPLOYEE'|translate}}</button>
+      </div>
+      </div>

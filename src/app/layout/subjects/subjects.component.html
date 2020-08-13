@@ -1,0 +1,9 @@
+<div class="dropdown">
+    <button class="btn btn-danger dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+      <!-- {{'level.choose'|translate}} -->
+      اختر الماده
+    </button>
+    <div class="dropdown-menu " >
+      <a class="dropdown-item subject-hover" (click)="toggleSubject(subject)" *ngFor="let subject of subjects">{{subject.name}}</a>
+    </div>
+    </div>

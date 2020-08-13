@@ -1,0 +1,68 @@
+<div class="container text-center">
+    <h2 class="text-center">{{'student.students'|translate}}</h2>
+    <table class="table table-bordered table-hover table-stripped">
+        <thead class="thead-dark">
+          <tr class="text-center">
+            <th scope="col">{{'shared.id'|translate}}</th>
+            <th scope="col">{{'shared.name'|translate}}</th>
+            <th scope="col">{{'shared.age'|translate}}</th>
+            <th scope="col">{{'student.joinDate'|translate}}</th>
+    
+          </tr>
+        </thead> 
+        <tbody>
+          <tr *ngFor="let student of students" class="text-center" (click)="detailsStudent(student)">
+            <th scope="row">{{student.id}}</th>
+            <td>{{student.name}}</td>
+            <td>{{student.age}}</td>
+            <td>{{student.joinDate|date}}</td>    
+          </tr>
+          
+          
+        </tbody>
+      </table>
+     
+
+
+      <div class="btn-group horizontal-middle">
+        <button type="button" class="btn btn-primary btn-lg" [disabled]="currentPage==0"
+            (click)="First()">{{'shared.first'|translate}}</button>
+
+        <button type=" button" class="btn btn-primary btn-lg" [disabled]="currentPage==0"
+            (click)="Previous()">{{'shared.previous'|translate}}</button>
+
+        <button type="button" class="btn btn-primary btn-lg" [disabled]="currentPage==totalPages -1 "
+            (click)="Next()">{{'shared.next'|translate}}</button>
+
+        <button type="button" class="btn btn-primary btn-lg" [disabled]="currentPage==totalPages -1"
+            (click)="Last()">{{'shared.last'|translate}}</button>
+    </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+      <div  class="container text-center oprations">
+          <button class="btn btn-success" routerLink="/add-student">{{'student.add.student'|translate}}</button>
+          <button class="btn btn-primary" routerLink="/search-student-by-name">{{'student.search.student'|translate}}</button>
+      </div>
+      </div>

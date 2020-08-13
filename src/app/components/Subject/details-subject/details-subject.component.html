@@ -1,0 +1,55 @@
+<!--Start Container-->
+<div class="container text-center">
+    <h1> {{'subject.info'|translate}}
+    </h1>
+  <hr/>
+    <!--Start Form-->
+    <form #subjectForm="ngForm">
+      <!--Start Row-->
+    <div class="row" >
+   
+      <!--start Left-->
+      <div class="col-lg-6 col-sm-12 left">
+        
+        <!--start personal Information-->
+ 
+
+        <div class="card" style="width: 25rem;">
+          <div class="card-header" style="background-color: #0390fc;color: white;">
+            {{'subject.generalInfo'|translate}}
+          </div>
+          <div class="list-group list-group-flush">
+            <label class="list-group-item personal" style="font-weight: bold;">{{'subject.title'|translate}} : <span style="font-weight: normal;">{{subject.name}}</span></label>
+         
+          </div>
+        </div>
+    
+
+  <hr/>   
+  <div style="display:none"  class="alert messagesuccess alert-success">{{'subject.delete.success'|translate}}</div>
+  <div style="display:none"  class="alert messageerror alert-danger">{{'subject.delete.failure'|translate}}</div>
+
+
+    </div>      <!--End personal Information-->
+
+     
+
+
+
+ </div>
+ <div class="operations">
+  <button (click)="updatesubject(subject.id)"   class="btn btn-primary">{{'shared.update'|translate}}</button>
+  <button (click)="deletesubject(subject.id)"   class="btn btn-danger">{{'shared.delete'|translate}}</button>
+
+</div>
+
+  <hr/>
+  <div class="list">
+      <button  routerLink="/list-subject" style="margin:auto"  class="btn btn-warning list">{{'teacher.listReturn'|translate}}</button>
+  </div>
+    </form>
+  
+    <!--End form-->
+     </div>
+    
+     <!--End Container-->

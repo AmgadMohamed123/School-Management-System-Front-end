@@ -1,0 +1,58 @@
+<div class="container text-center" >
+    <form  #searchForm="ngForm"  (ngSubmit)="search(searchKey.value,searchType.value)">
+        <div class="form-group text-center" style="width: 35%;margin: auto;margin-top: 25px;">
+          <input type="text" ngModel #searchKey="ngModel" name="searchKey" class="form-control" required placeholder="{{'EMPLOYEEFULLNAME'|translate}}">
+    
+        </div>
+       
+        <div *ngIf="searchKey.touched &&searchKey.errors?.required"  style="width: 35%;margin: auto;margin-top: 25px;"   class="alert alert-danger col-sm-5 ">{{'SEARCHERROR'|translate}}</div>
+    
+        <select   ngModel #searchType="ngModel" name="searchType" class="form-control"  style="width: 17em;margin: auto;margin-top: 10px;" >
+    
+          <option value="" disabled  selected>{{'SEARCHBY'|translate}}</option>
+          <option value="Student Name">{{'EMPLOYEEFULLNAME'|translate}}</option>
+  
+        </select>
+    
+    
+    
+      
+    
+    
+       <div class="form-group text-center" style="margin-top: 25px;">
+    
+        <button type="submit" [disabled]="searchForm.invalid" class="btn btn-primary">{{'SEARCH'|translate}}</button>
+    </div>
+      </form>
+
+        <h3 class="text-center">{{'SEARCHRESULT'|translate}}</h3>
+        <table class="table table-hover  table-stripped table-bordered">
+            <thead class="thead-dark">
+              <tr>
+                <th>{{'ID'|translate}}</th>
+                <th>{{'EMPLOYEEFULLNAME'|translate}}</th>
+                <th>{{'AGE'|translate}}</th>
+                <th>{{'GENDER'|translate}}</th>
+                <th colspan="3">{{'ACTIONS'|translate}}</th>
+                
+              </tr>
+            </thead>
+            <tbody>
+              <tr class="text-center">
+          
+                <td></td>
+                <td></td>
+                <td></td>
+                <td><button routerLink="/update-employee"   class="btn btn-primary">{{'UPDATE'|translate}}</button></td>
+                <td><button  class="btn btn-danger">{{'DELETE'|translate}}</button></td>
+                <td><button routerLink="/details-employee" class="btn btn-warning">{{'DETAILS'|translate}}</button></td>
+        
+              </tr>
+           
+            </tbody>
+        
+          </table>
+        <div>
+          <pagination-controls nextLabel="{{'NEXTLABEL'|translate}}" previousLabel="{{'PREVIOUSLABEL'|translate}}"   id="listing_pagination" maxSize="5" directionLinks="true" (pageChange)="page=$event"></pagination-controls>
+        </div>
+          </div>

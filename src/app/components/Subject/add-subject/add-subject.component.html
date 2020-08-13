@@ -1,0 +1,48 @@
+<!--Start Container-->
+<div class="container align ">
+    <h3 class="text-center">{{'subject.add.title'|translate}}</h3>
+  <hr/>
+    <!--Start Form-->
+    <form  [formGroup]="formData" (ngSubmit)="addSubject()">
+      <!--Start Row-->
+    <div class="row">
+              <div class="col-sm-6">
+
+      <div >
+        <img src="assets/images/classroom.jpg" width="400px" height="400px"/>
+      </div>
+    
+              </div>
+        <div class="col-sm-6">
+    
+            <div  class="alert messagesuccess alert-success">{{'subject.add.success'|translate}}</div>
+            <div  class="alert messageerror alert-danger">{{'subject.add.failure'|translate}}</div>
+
+        
+        <!--Start Class name group-->
+  
+        <div class="form-group">
+          <div >
+              <label>{{'subject.title'|translate}}</label>
+              <input type="text"   formControlName="name"    [(ngModel)]="subject.name"  ngModel  class="form-control" autofocus>
+          </div>
+          <div *ngIf="controls.name.touched &&controls.name.errors?.required"   class="alert alert-danger align margin" >{{'subject.requiredName'|translate}}</div>
+  
+      </div>
+            <!--End Subject name group-->
+  
+            <button  [disabled]="formData.invalid" class="btn btn-danger btn-distance">{{'subject.add.title'|translate}}</button>
+            <button  routerLink="/list-subject"    class="btn btn-primary btn-distance">{{'subject.listReturn'|translate}}</button>
+       
+                          
+  </div>
+  </div>
+      <!--End row-->
+  <hr/>
+   
+    </form>
+
+    <!--End form-->
+     </div>
+    
+     <!--End Container-->

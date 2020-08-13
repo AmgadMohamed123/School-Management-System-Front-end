@@ -1,0 +1,57 @@
+<!--Start Container-->
+<div class="container " style="text-align: start;" >
+    <h3 class="text-center" style="color:indianred;margin-top: 15px;margin-bottom:20px;margin-right: 150px;">{{'level.add.level'|translate}}</h3>
+  <hr/>
+    <!--Start Form-->
+    <form #testForm="ngForm" [formGroup]="addForm">
+      <!--  -->
+      <!--Start Row-->
+    <div class="row">
+      <div >
+        <img src="assets/images/classroom.jpg" width="400px" height="400px"/>
+    </div>
+        <div class="col-sm-6">
+    
+            <div style="display:none"  class="alert messagesuccess alert-success">{{'level.add.success'|translate}}</div>
+            <div style="display:none"  class="alert messageerror alert-danger">{{'level.add.failure'|translate}}</div>
+
+        
+        <!--Start Class name group-->
+  
+    <!--Start Patient Fullname group-->
+  
+    <!-- <div class="form-group">
+      <div class="col-sm-9">
+          <input type="text" formControlName="name" [(ngModel)]="myTest.name"   placeholder=" Name" required class="form-control" autofocus>
+      </div>
+      <div *ngIf="addForm.get('name').touched &&addForm.get('name').errors?.required"   class="alert alert-danger col-sm-5 margin">please enter full name</div>
+
+  </div> -->
+
+  <div class="form-group">
+    <div class="col-sm-9">
+        <input type="text" formControlName="name" [(ngModel)]="myTest.name"    placeholder=" Name" required class="form-control" autofocus>
+    </div>
+    <div *ngIf="addForm.get('name').touched &&addForm.get('name').errors?.required"   class="alert alert-danger col-sm-5 margin">please enter full name</div>
+
+</div>
+        <!--End Patient Fullname group-->
+
+
+       
+            <!--End Class name group-->
+  
+  
+  </div>
+  </div>
+      <!--End row-->
+  <hr/>
+      <button  style="margin:auto;margin-bottom: 5px;display:block;" [disabled]="testForm.invalid"(click)="addTest()" class="btn btn-danger">{{'level.add.level'|translate}}</button>
+      <button  routerLink="/list-level" style="margin:auto;display:block;"  class="btn btn-secondary">{{'level.listReturn'|translate}}</button>
+
+    </form>
+
+    <!--End form-->
+     </div>
+    
+     <!--End Container-->

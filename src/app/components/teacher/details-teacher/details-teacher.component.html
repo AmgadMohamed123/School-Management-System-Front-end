@@ -1,0 +1,103 @@
+<!--Start Container-->
+<div class="container text-center">
+    <h1 class="text-center" style="color:grey;margin-top: 15px;margin-bottom:20px;margin-right: 150px;"> {{'teacher.info'|translate}}
+    </h1>
+  <hr/>
+    <!--Start Form-->
+    <form #teacherForm="ngForm" >
+      <!--Start Row-->
+    <div class="row" >
+  
+      <!--start Left-->
+      <div class="col-lg-6 col-sm-12 left">
+        
+        <!--start personal Information-->
+ 
+
+        <div class="card" style="width: 25rem;">
+          <div class="card-header" style="background-color: #0390fc;color: white;">
+            {{'teacher.personalInfo'|translate}}
+          </div>
+          <div class="list-group list-group-flush">
+            <label class="list-group-item personal" style="font-weight: bold;">{{'teacher.name'|translate}} : <span style="font-weight: normal;">{{teacher.name}}</span></label>
+            <label class="list-group-item personal" style="font-weight: bold;">{{'shared.age'|translate}} : <span  style="font-weight: normal;">{{teacher.age}}</span></label>
+            <label class="list-group-item personal" style="font-weight: bold;">{{'shared.gender'|translate}}: <span style="font-weight: normal;">{{teacher.gender}}</span></label>
+            <label class="list-group-item personal" style="font-weight: bold;">{{'shared.maritalStatus'|translate}}: <span style="font-weight: normal;">{{teacher.maritalStatus}}</span></label>
+            <label class="list-group-item personal" style="font-weight: bold;">{{'shared.birthDate'|translate}} : <span  style="font-weight: normal;">{{teacher.birthDate|date}}</span></label>
+            <label class="list-group-item personal" style="font-weight: bold;">{{'teacher.hireDate'|translate}} : <span  style="font-weight: normal;">{{teacher.hireDate|date}}</span></label>
+            <label class="list-group-item personal" style="font-weight: bold;">{{'teacher.address'|translate}}: <span style="font-weight: normal;">{{teacher.address}}</span></label>
+            <label class="list-group-item personal" style="font-weight: bold;">{{'shared.email'|translate}}: <span style="font-weight: normal;">{{teacher.email}}</span></label>
+            <label class="list-group-item personal" style="font-weight: bold;">{{'teacher.salary'|translate}}: <span style="font-weight: normal;">{{teacher.salary}}</span></label>
+            <label class="list-group-item personal" style="font-weight: bold;">{{'shared.ssn'|translate}}: <span style="font-weight: normal;">{{teacher.ssn}}</span></label>
+          </div>
+        </div>
+    
+
+  <hr/>   
+ 
+
+    </div>      <!--End personal Information-->
+
+       <!--start Left-->
+       <div class="col-lg-6 col-sm-12 left">
+        
+        <!--start Scientific Information-->
+        <div class="card" style="width: 25rem;">
+            <div class="card-header" style="background-color: #db5a56;color: white;">
+              {{'teacher.scientificInfo'|translate}}
+            </div>
+            <div class="list-group list-group-flush">
+          
+              <!-- <label class="list-group-item scientific" style="font-weight: bold;">{{'level.title'|translate}}: <span style="font-weight: normal;">{{teacher.level}}</span></label> -->
+              <label class="list-group-item scientific" style="font-weight: bold;">{{'subject.title'|translate}}: <span style="font-weight: normal;">{{teacher.subject}}</span></label>
+              <label class="list-group-item scientific" style="font-weight: bold;">{{'teacher.salary'|translate}}: <span style="font-weight: normal;">{{teacher.salary}}</span></label>
+              <label class="list-group-item scientific" style="font-weight: bold;">{{'teacher.degree'|translate}}: <span style="font-weight: normal;">{{teacher.degree}}</span></label>
+              <label class="list-group-item scientific" style="font-weight: bold;">{{'teacher.specialization'|translate}}: <span style="font-weight: normal;">{{teacher.specialization}}</span></label>
+              <label class="list-group-item scientific" style="font-weight: bold;">{{'teacher.yearsOfExperience'|translate}}: <span style="font-weight: normal;">{{teacher.yearsOfExperience}}</span></label>
+              <label class="list-group-item scientific" style="font-weight: bold;">{{'teacher.qualification'|translate}}: <span style="font-weight: normal;">{{teacher.qualification}}</span></label>
+              <label class="list-group-item scientific" style="font-weight: bold;">{{'level.levels'|translate}}:</label>
+              <div class="list-group list-group-flush" *ngFor="let level of levels">
+                <span class="list-group-item scientific" style="font-weight: normal;">{{level.name}}</span>
+      
+              </div>
+            </div>
+          </div >
+                     <!--levels-->
+     
+  <hr/>   
+  
+
+  <div style="display:none"  class="alert messagesuccess alert-success">{{'teacher.delete.success'|translate}}</div>
+  <div style="display:none"  class="alert messageerror alert-danger">{{'teacher.delete.failure'|translate}}</div>
+
+
+    </div>      <!--End Scientific Information-->
+
+<!-- <ul *ngFor="let l of levels">
+  <li>{{l.name}}</li>
+</ul> -->
+
+
+
+    <!-- <div class="col-sm-6">
+      <show-teacher-images [retrievedImages]="teacherImages"></show-teacher-images>
+  </div> -->
+
+
+ </div>
+ <div class="operations">
+  <button (click)="updateTeacher(teacher.id)"   class="btn btn-primary">{{'shared.update'|translate}}</button>
+  <button (click)="deleteTeacher(teacher.id)"   class="btn btn-danger">{{'shared.delete'|translate}}</button>
+
+</div>
+
+  <hr/>
+  <div class="list">
+      <button  routerLink="/list-teacher" style="margin:auto"  class="btn btn-warning list">{{'teacher.listReturn'|translate}}</button>
+  </div>
+    </form>
+  
+    <!--End form-->
+     </div>
+    
+     <!--End Container-->

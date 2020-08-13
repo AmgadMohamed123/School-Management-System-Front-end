@@ -1,0 +1,80 @@
+<form [formGroup]="formData" (submit)="getCurrentObject()">
+    <!-- name  -->
+    <h4>{{'guardian.shared.info'| translate}}</h4>
+    <hr/>
+
+    <div class="col-sm-10 margin">
+        <label class="distance" for="guardian_name_id">{{'guardian.shared.name' | translate}}</label>
+        <input id="guardian_name_id" type="text" [(ngModel)]="guardian.name" formControlName="name"
+            class="form-control">
+        <div *ngIf="controls.name.touched && controls.name.errors?.required" class="alert alert-danger">
+            {{'guardian.shared.nameMsg' | translate}}
+        </div>
+    </div>
+
+    <!-- job  -->
+    <div class="col-sm-10 margin">
+        <label class="distance" for="guardian_job_id">{{'guardian.shared.job' | translate}}</label>
+        <input id="guardian_job_id" type="text" [(ngModel)]="guardian.job" formControlName="job" class="form-control">
+        <div *ngIf="controls.job.touched && controls.job.errors?.required" class="alert alert-danger">
+            {{'guardian.shared.jobMsg' | translate}}
+        </div>
+    </div>
+
+    <!-- email  -->
+    <div class="col-sm-10 margin">
+        <label class="distance" for="guardian_email_id">{{'shared.email' | translate}}</label>
+        <input id="guardian_email_id" type="text" [(ngModel)]="guardian.email" formControlName="email"
+            class="form-control">
+    </div>
+
+    <!-- gender -->
+    <div class="outline  gender-outline" (change)="handleGenderChange($event)" style="text-align: start;">
+        <label>{{'shared.gender'|translate}}:</label>
+        &nbsp;&nbsp;&nbsp;&nbsp;
+        <div class="custom-control  custom-radio custom-control-inline">
+          <input type="radio" value="male" class="custom-control-input"  id="guardian-male" formControlName="gender" >
+          <label class="custom-control-label" for="guardian-male">{{'shared.male'|translate}}</label>
+        </div>
+        <div class="custom-control  custom-radio custom-control-inline">
+          <input type="radio" value="female" class="custom-control-input"  id="guardian-female" formControlName="gender">
+          <label class="custom-control-label" for="guardian-female">{{'shared.female'|translate}}</label>
+        </div>
+        </div>
+
+    <!-- ssn  -->
+    <div class="col-sm-8 margin">
+        <label class="distance" for="guardian_ssn_id">{{'guardian.shared.ssn' | translate}}</label>
+        <input id="guardian_ssn_id" type="text" [(ngModel)]="guardian.ssn" formControlName="ssn" class="form-control">
+        <div *ngIf="controls.ssn.touched && controls.ssn.errors?.required" class="alert alert-danger">
+            {{'shared.ssnMsg' | translate}}
+        </div>
+    </div>
+
+    <!-- phone  -->
+    <div class="col-sm-8 margin">
+        <label class="distance" for="guardian_phone_id">{{'shared.phoneNumber' | translate}}</label>
+        <input id="guardian_phone_id" type="text" [(ngModel)]="guardian.phone" formControlName="phone"
+            class="form-control">
+        <div *ngIf="controls.phone.touched && controls.phone.errors?.required" class="alert alert-danger">
+            {{'shared.requiredPhoneNumber' | translate}}
+        </div>
+    </div>
+
+    <!-- age-->
+    <div class="col-sm-6 margin">
+        <label class="distance">{{'shared.age'|translate}}</label>
+        <input min="0" type="number" formControlName="age" [(ngModel)]="guardian.age" class="form-control">
+        <div *ngIf="controls.age.touched && controls.age.errors?.required" class="alert alert-danger">
+            {{'shared.ageMsg'|translate}}
+        </div>
+    </div>
+
+    <!-- notes  -->
+    <div class="col-sm-10 margin">
+        <label for="desc_id" class="distance">{{'shared.desc' | translate}}</label>
+        <textarea [(ngModel)]="guardian.notes" formControlName="notes" id="desc_id" rows="7"
+            class="form-control"></textarea>
+    </div>  
+
+</form>

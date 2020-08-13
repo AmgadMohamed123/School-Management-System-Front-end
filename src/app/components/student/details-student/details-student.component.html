@@ -1,0 +1,121 @@
+<!--Start Container-->
+<div class="container text-center">
+    <h3 class="text-center"> {{'student.info'|translate}}</h3>
+  <hr/>
+    <!--Start Form-->
+    <form #studentForm="ngForm" >
+      <!--Start Row-->
+    <div class="row" >
+  
+      <!--start Left-->
+      <div class="col-lg-6 col-sm-12 left">
+        
+        <!--start personal Information-->
+  
+
+        <div class="card" style="width: 25rem;">
+          <div class="card-header" style="background-color: #0390fc;color: white;">
+            {{'student.personalInfo'|translate}}
+          </div>
+          <div class="list-group list-group-flush">
+            <label class="list-group-item personal" style="font-weight: bold;">{{'student.name'|translate}} : <span style="font-weight: normal;">{{student.name}}</span></label>
+            <label class="list-group-item personal" style="font-weight: bold;">{{'shared.age'|translate}} : <span  style="font-weight: normal;">{{student.age}}</span></label>
+            <label class="list-group-item personal" style="font-weight: bold;">{{'shared.gender'|translate}}: <span style="font-weight: normal;">{{student.gender}}</span></label>
+            <label class="list-group-item personal" style="font-weight: bold;">{{'student.joinDate'|translate}} : <span  style="font-weight: normal;">{{student.joinDate|date}}</span></label>
+            <label class="list-group-item personal" style="font-weight: bold;">{{'level.title'|translate}}: <span style="font-weight: normal;">{{student.level.name}}</span></label>
+            <label class="list-group-item personal" style="font-weight: bold;">{{'shared.birthDate'|translate}} : <span  style="font-weight: normal;">{{student.dob|date}}</span></label>
+            <label class="list-group-item personal" style="font-weight: bold;">{{'student.address'|translate}}: <span style="font-weight: normal;">{{student.address}}</span></label>
+            <label class="list-group-item personal" style="font-weight: bold;">{{'shared.email'|translate}}: <span style="font-weight: normal;">{{student.email}}</span></label>
+            <label class="list-group-item personal" style="font-weight: bold;">{{'student.paidFees'|translate}}: <span style="font-weight: normal;">{{student.paidFees}}</span></label>
+            <label class="list-group-item personal" style="font-weight: bold;">{{'student.remainFees'|translate}}: <span style="font-weight: normal;">{{student.remainFees}}</span></label>
+
+          </div>
+        </div>
+    
+
+  <hr/>   
+ 
+
+    </div>      <!--End personal Information-->
+
+       <!--start Left-->
+       <div class="col-lg-6 col-sm-12 left">
+        
+        <!--start Gurdian Information-->
+  
+
+        <div class="card" style="width: 25rem;">
+          <div class="card-header" style="background-color: brown;color: white;">
+            {{'student.gurdianPersonalInfo'|translate}}
+          </div>
+          <div class="list-group list-group-flush">
+            <label class="list-group-item gurdian" style="font-weight: bold;">{{'guardian.shared.name'|translate}} : <span style="font-weight: normal;">{{student.guardian.name}}</span></label>
+            <label class="list-group-item gurdian" style="font-weight: bold;">{{'guardian.shared.phoneNumber'|translate}} : <span  style="font-weight: normal;">{{student.guardian.phone}}</span></label>
+            <label class="list-group-item gurdian" style="font-weight: bold;">{{'shared.ssn'|translate}}: <span style="font-weight: normal;">{{student.guardian.ssn}}</span></label>
+            <label class="list-group-item gurdian" style="font-weight: bold;">{{'guardian.shared.job'|translate}}: <span style="font-weight: normal;">{{student.guardian.job}}</span></label>
+            <label class="list-group-item gurdian" style="font-weight: bold;">{{'shared.age'|translate}}: <span style="font-weight: normal;">{{student.guardian.age}}</span></label>
+            <label class="list-group-item gurdian" style="font-weight: bold;">{{'shared.gender'|translate}}: <span style="font-weight: normal;">{{student.guardian.gender}}</span></label>
+            <label class="list-group-item gurdian" style="font-weight: bold;">{{'shared.email'|translate}}: <span style="font-weight: normal;">{{student.guardian.email}}</span></label>
+            <label class="list-group-item gurdian" style="font-weight: bold;">{{'guardian.shared.notes'|translate}}: <span style="font-weight: normal;">{{student.guardian.notes}}</span></label>
+
+          </div>
+        </div>
+    
+
+  <hr/>   
+ 
+
+    </div>      <!--End Gurdian Information-->
+
+
+
+
+ <!--Start Student Grades -->
+
+ <div>
+  <h6>درجات الطالب</h6>
+  <!-- <ckeditor [(ngModel)]="student.grade"></ckeditor> -->
+  <!-- {{student.grade}} -->
+
+</div>
+
+  <!--End Student Grades -->
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ 
+
+
+
+
+
+ </div>
+ <div class="operations">
+  <button (click)="updateStudent(student.id)"   class="btn btn-primary">{{'shared.update'|translate}}</button>
+  <button (click)="deleteStudent(student.id)"   class="btn btn-danger">{{'shared.delete'|translate}}</button>
+
+</div>
+  <hr/>
+      <button  routerLink="/list-student" style="margin:auto;display:block;"  class="btn btn-warning">{{'student.listReturn'|translate}}</button>
+    </form>
+  
+    <!--End form-->
+     </div>
+    
+     <!--End Container-->
